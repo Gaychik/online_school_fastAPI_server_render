@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px;">
+    <div class="container" style="max-width: 600px; text-align: center;">
+        <div style="background: #fff; border-radius: 28px; padding: 60px 40px; box-shadow: -19px 20px 45.1px -26px rgba(59, 61, 68, 0.05);">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="margin-bottom: 30px;">
+                <circle cx="40" cy="40" r="40" fill="#5773bc"/>
+                <path d="M25 40L35 50L55 30" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+            <h1 style="font-family: 'Druk Cyr', sans-serif; font-size: 48px; color: #2a2a29; margin-bottom: 20px;">
+                Спасибо за заявку!
+            </h1>
+            
+            <p style="font-size: 20px; color: #77797f; line-height: 1.6; margin-bottom: 40px;">
+                Мы получили вашу заявку и свяжемся с вами в течение 15 минут<br>
+                в рабочее время (с 9:00 до 17:00 по Москве)
+            </p>
+            
+            <div style="background: #eaf0ff; border-radius: 16px; padding: 30px; margin-bottom: 40px;">
+                <p style="font-size: 18px; color: #5773bc; margin-bottom: 15px;">
+                    Что будет дальше:
+                </p>
+                <ul style="text-align: left; color: #77797f; font-size: 16px; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;">✓ Менеджер перезвонит вам для уточнения деталей</li>
+                    <li style="margin-bottom: 10px;">✓ Поможем подобрать подходящий курс</li>
+                    <li style="margin-bottom: 10px;">✓ Пришлем доступ к пробному уроку</li>
+                </ul>
+            </div>
+            
+            <a href="/" class="button button--size_s" style="display: inline-flex; text-decoration: none;">
+                Вернуться на главную
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

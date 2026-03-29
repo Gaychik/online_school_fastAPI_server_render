@@ -1,0 +1,42 @@
+<header class="header--landing">
+    <div class="container">
+        <div class="header-content">
+            <a href="/" class="header-content__logo">
+                <span class="logo">
+                    <img src="{{ url_for('static', path='/img/logo.svg') }}" alt="ЕГЭЛЭНД" class="logo__img">
+                </span>
+            </a>
+            
+            <nav class="header-content__menu">
+                <div class="menu-item"><a href="#about">О школе</a></div>
+                <div class="menu-item"><a href="#programs">Программы</a></div>
+                <div class="menu-item"><a href="#reviews">Отзывы</a></div>
+                <div class="menu-item"><a href="#prices">Цены</a></div>
+                <div class="menu-item"><a href="#contacts">Контакты</a></div>
+            </nav>
+            
+            <div class="header-content__contacts">
+                <div class="phone">
+                    <span class="phone__icon">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.8333 13.9583V11.875C15.8333 11.4167 15.4583 11.0417 15 11.0417H13.5417C13.0833 11.0417 12.7083 11.4167 12.7083 11.875V13.9583C12.7083 14.4167 12.3333 14.7917 11.875 14.7917C7.91667 14.7917 4.58333 11.4583 4.58333 7.5C4.58333 7.04167 4.95833 6.66667 5.41667 6.66667H7.5C7.95833 6.66667 8.33333 6.29167 8.33333 5.83333V3.33333C8.33333 2.875 7.95833 2.5 7.5 2.5H5.41667C4.95833 2.5 4.58333 2.875 4.58333 3.33333C4.58333 8.20833 8.79167 12.4167 13.6667 12.4167C14.125 12.4167 14.5 12.0417 14.5 11.5833V9.5C14.5 9.04167 14.875 8.66667 15.3333 8.66667H15.8333C16.2917 8.66667 16.6667 9.04167 16.6667 9.5V13.9583C16.6667 14.4167 16.2917 14.7917 15.8333 14.7917Z" fill="#2d2d2d"/>
+                        </svg>
+                    </span>
+                    <a href="tel:+78000000000" class="phone__link">8 (800) 000-00-00</a>
+                </div>
+                
+                <div class="header-content__button">
+                    <button class="button button--size_s" onclick="openPopup('callback')">
+                        Заказать звонок
+                    </button>
+                </div>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Меню">
+                <span class="mobile-toggle__line"></span>
+                <span class="mobile-toggle__line"></span>
+                <span class="mobile-toggle__line"></span>
+            </button>
+        </div>
+    </div>
+</header>

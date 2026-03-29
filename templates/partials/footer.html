@@ -1,0 +1,87 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <img src="{{ url_for('static', path='/img/logo.svg') }}" alt="ЕГЭЛЭНД" class="footer-logo">
+                <p class="footer-description">
+                    Онлайн-школа для подготовки к ЕГЭ и ОГЭ
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Навигация</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">О школе</a></li>
+                    <li><a href="#programs">Программы</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#prices">Цены</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Контакты</h4>
+                <ul class="footer-contacts">
+                    <li>
+                        <a href="tel:+78000000000" class="footer-phone">8 (800) 000-00-00</a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@el-ed.ru" class="footer-email">info@el-ed.ru</a>
+                    </li>
+                    <li class="footer-socials">
+                        <a href="#" target="_blank">VK</a>
+                        <a href="#" target="_blank">Telegram</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Документы</h4>
+                <ul class="footer-docs">
+                    <li><a href="/docs/policy.pdf" target="_blank">Политика конфиденциальности</a></li>
+                    <li><a href="/docs/soglasie.pdf" target="_blank">Согласие на обработку данных</a></li>
+                    <li><a href="/docs/license.pdf" target="_blank">Лицензия</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">© 2024 ЕГЭЛЭНД. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Windows -->
+<div class="mc_popup" id="popup-callback">
+    <div class="mc_popup__wrapper">
+        <button class="mc_popup__close" onclick="closePopup('callback')">&times;</button>
+        <div class="mc_popup__bg"></div>
+        <div class="mc_popup__row">
+            <div class="mc_popup__content">
+                <h3 class="mc_popup__title">Заказать звонок</h3>
+                <p class="mc_popup__text">Оставьте заявку <span>и мы перезвоним</span> в течение 15 минут</p>
+            </div>
+            <div class="mc_popup__form">
+                <form class="wpcf7-form" action="/api/submit-form" method="POST">
+                    <p>
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </p>
+                    <p>
+                        <input type="tel" name="phone" placeholder="Телефон" required>
+                    </p>
+                    <p>
+                        <input type="email" name="email" placeholder="Email">
+                    </p>
+                    <p>
+                        <label class="accept">
+                            <input type="checkbox" checked required>
+                            Я даю <a href="/docs/soglasie.pdf" target="_blank">согласие</a> на обработку персональных данных
+                        </label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Отправить заявку">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
