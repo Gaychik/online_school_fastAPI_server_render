@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer id="contacts" class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
@@ -51,34 +51,68 @@
 </footer>
 
 <!-- Modal Windows -->
+<!-- Full Popup Modal -->
 <div class="mc_popup" id="popup-callback">
-    <div class="mc_popup__wrapper">
-        <button class="mc_popup__close" onclick="closePopup('callback')">&times;</button>
-        <div class="mc_popup__bg"></div>
+    <div class="mc_popup__wrapper wrapper">
+        <button class="mc_popup__close" onclick="closePopup('callback')" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <picture>
+            <source srcset="{{ url_for('static', path='/img/mc_popup-bg-2_min.svg') }}" media="(max-width: 768px)">
+            <img src="{{ url_for('static', path='/img/mc_popup-bg-2.svg') }}" alt="Фон" class="mc_popup__bg">
+        </picture>
         <div class="mc_popup__row">
             <div class="mc_popup__content">
-                <h3 class="mc_popup__title">Заказать звонок</h3>
-                <p class="mc_popup__text">Оставьте заявку <span>и мы перезвоним</span> в течение 15 минут</p>
+                <h2 class="mc_popup__title">Заполните форму, чтобы узнать подробности подготовки со скидкой</h2>
             </div>
-            <div class="mc_popup__form">
+            <div class="mc_popup__form form">
                 <form class="wpcf7-form" action="/api/submit-form" method="POST">
                     <p>
-                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="text" name="name" placeholder="Имя" required>
                     </p>
+                    <div class="double-row">
+                        <div class="select-wrapper">
+                            <p class="onlypopup">Оставь заявку и мы свяжемся с тобой в течение 15 минут</p>
+                            <p>
+                                <select name="class-select" required>
+                                    <option value="">Выбери класс</option>
+                                    <option value="7 класс">7 класс</option>
+                                    <option value="8 класс">8 класс</option>
+                                    <option value="9 класс">9 класс</option>
+                                    <option value="10 класс">10 класс</option>
+                                    <option value="11 класс">11 класс</option>
+                                </select>
+                            </p>
+                            <p class="wpcf7-select-arrow">
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.41667 1L6.45833 6L11.5 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </p>
+                        </div>
+                        <div class="doubling">
+                            <p>
+                                <input type="tel" name="phone" placeholder="+7 (___) ___-____" required>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden UTM fields -->
+                    <input type="hidden" name="utm_source" id="utm_source" value="">
+                    <input type="hidden" name="utm_medium" id="utm_medium" value="">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+                    <input type="hidden" name="utm_term" id="utm_term" value="">
+                    <input type="hidden" name="utm_content" id="utm_content" value="">
+                    
                     <p>
-                        <input type="tel" name="phone" placeholder="Телефон" required>
+                        <input type="submit" value="Записаться">
                     </p>
-                    <p>
-                        <input type="email" name="email" placeholder="Email">
-                    </p>
-                    <p>
-                        <label class="accept">
-                            <input type="checkbox" checked required>
-                            Я даю <a href="/docs/soglasie.pdf" target="_blank">согласие</a> на обработку персональных данных
+                    <p class="accept">
+                        <input type="checkbox" checked required id="accept-popup">
+                        <label for="accept-popup">
+                            Я даю <a href="/docs/soglasie.pdf" target="_blank">согласие</a> на обработку моих персональных данных
                         </label>
-                    </p>
-                    <p>
-                        <input type="submit" value="Отправить заявку">
                     </p>
                 </form>
             </div>

@@ -18,8 +18,9 @@ templates = Jinja2Templates(directory="templates")
 class ContactForm(BaseModel):
     name: str
     phone: str
-    email: Optional[EmailStr] = None
+    email: Optional[str] = None
     telegram: Optional[str] = None
+    class_select: Optional[str] = None
     utm_source: Optional[str] = None
     utm_medium: Optional[str] = None
     utm_campaign: Optional[str] = None
@@ -45,6 +46,12 @@ async def submit_form(form_data: ContactForm):
     print(f"  Phone: {form_data.phone}")
     print(f"  Email: {form_data.email}")
     print(f"  Telegram: {form_data.telegram}")
+    print(f"  Class: {form_data.class_select}")
+    print(f"  UTM Source: {form_data.utm_source}")
+    print(f"  UTM Medium: {form_data.utm_medium}")
+    print(f"  UTM Campaign: {form_data.utm_campaign}")
+    print(f"  UTM Term: {form_data.utm_term}")
+    print(f"  UTM Content: {form_data.utm_content}")
     
     # В будущем можно добавить:
     # 1. Сохранение в базу данных

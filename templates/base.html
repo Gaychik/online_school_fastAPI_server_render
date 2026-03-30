@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/original_styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/sections.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/fix-sections.css') }}">
     
     {% block extra_css %}{% endblock %}
 </head>
@@ -35,7 +36,15 @@
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/main.js') }}" defer></script>
+    
+    <script>
+        // Debug: check if JS is loading
+        console.log('Base template script loaded');
+        window.addEventListener('load', function() {
+            console.log('Window loaded completely');
+        });
+    </script>
     
     {% block extra_js %}{% endblock %}
 </body>
