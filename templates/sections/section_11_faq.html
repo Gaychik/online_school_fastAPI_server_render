@@ -1,106 +1,301 @@
-<!-- section_11_faq.html - Extracted from original HTML -->
-<section class="section-10">
-            <h2 class="middle_title">Частые вопросы</h2>
-            <div class="wrapper">
-                <div class="col">
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">Мой ребенок плохо разбирается <br>
-                            в математике, подойдет ли ему курс?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <div class="text">
-                            Да, на наших курсах нет требований к начальному уровню подготовки. Преподаватели помогут
-                            ребёнку разобраться
-                            в сложных темах и заложить прочный фундамент
-                            для старших классов.
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">Какое оборудование и интернет нужны <br>
-                            для комфортного обучения?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <div class="text">Для занятий подойдёт практически любое устройство – компьютер, ноутбук,
-                            планшет или смартфон. Главное – стабильное подключение к сети интернет, которое обеспечит
-                            просмотр видео без задержек.</div>
-                    </div>
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">Кто такой куратор и чем они помогают?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <div class="text">Куратор помогает ребенку усваивать материал. Куратор - профессиональный
-                            преподаватель по математике, он проверит домашнюю работу, разберет вместе с ребенком ошибки,
-                            поможет их исправить и всегда будет на связи. С куратором создается чат где есть родитель и
-                            ребенок и можно общаться и лично созваниваться с куратором. С куратором невозможна ситуация
-                            «я не понял тему»</div>
-                    </div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модифицированная секция FAQ</title>
+    <style>
+        /* 1. ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
 
+        /* 2. ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И СТИЛИ */
+        :root {
+            /* Фирменные цвета */
+            --purple: #835FF7;
+            --pink: #E8488E;
+            --yellow: #FDC741;
+            --blue: #5773BC;
+            --azure: #EAF0FF;
+            --white: #FFFFFF;
+            --black: #1A1A1A;
+            --text-color: #D0D0D0; /* Светлый текст для темного фона */
+            --background-color: #111111; /* Темный фон */
 
+            /* Шрифты */
+            --font-heading: 'Rubik', sans-serif;
+            --font-body: 'Inter', sans-serif;
+
+            /* Прочее */
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+
+        /* Применяем базовые стили, чтобы пример выглядел корректно */
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px 0; /* Убираем боковые отступы у body */
+        }
+
+        /* 3. СТИЛИЗАЦИЯ СЕКЦИИ FAQ */
+        .faq-section {
+            padding: 60px 0;
+            /* Эффект параллакса для фона (можно настроить или заменить на свой) */
+            /* 
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.9)), url('your-background-image.jpg');
+            background-attachment: fixed;
+            background-size: cover; 
+            */
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px; /* Боковые отступы для всего контейнера */
+            text-align: center;
+        }
+
+        .faq-main-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem); /* Адаптивный размер шрифта */
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .faq-intro {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 20px;
+            text-align: left;
+        }
+
+        /* Медиа-запрос для десктопов: 2 колонки */
+        @media (min-width: 768px) {
+            .faq-list {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+        }
+
+        .faq-item {
+            background-color: var(--black);
+            border: 1px solid #333;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--white);
+            transition: color var(--transition-speed) ease;
+        }
+        
+        /* 4. ЭФФЕКТЫ И АНИМАЦИИ */
+        .faq-question:hover {
+            color: var(--yellow);
+        }
+        
+        .faq-item:hover {
+            /* Glow-эффект при наведении */
+            border-color: var(--purple);
+            box-shadow: 0 0 15px 0 rgba(131, 95, 247, 0.4);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-left: 16px;
+            position: relative;
+        }
+
+        .faq-icon-line {
+            position: absolute;
+            background-color: var(--purple);
+            height: 2px;
+            width: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 2px;
+            transition: transform var(--transition-speed) ease;
+        }
+        
+        .faq-icon-line.vertical {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        /* Анимация иконки в "минус" */
+        .faq-item.active .faq-icon-line.vertical {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+        .faq-item.active .faq-icon-line.horizontal {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+        
+        /* Скрытие ответа */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 20px 20px;
+            margin: 0;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Показ ответа, когда у .faq-item есть класс .active */
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* Установить достаточно большую высоту, чтобы вместить любой ответ */
+        }
+    </style>
+</head>
+<body>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-main-title">Частые вопросы</h2>
+            <p class="faq-intro">Здесь собраны самые важные ответы — быстрее примите решение и подключайтесь на курс!</p>
+
+            <div class="faq-list">
+                <!-- Вопрос 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Мой ребенок плохо разбирается в математике, подойдет ли ему курс?</span>
+                        <div class="faq-icon">
+                            <div class="faq-icon-line horizontal"></div>
+                            <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, на наших курсах нет требований к начальному уровню подготовки. Преподаватели помогут ребёнку разобраться в сложных темах и заложить прочный фундамент для старших классов.</p>
+                    </div>
                 </div>
-                <div class="col">
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">Можно оплачивать обучение <br>
-                            материнским капиталом?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <div class="text">Да, Вы можете оплатить обучение материнским капиталом, а также получить
-                            налоговый вычет. Поможем с оформлением документов
-                            и подачей заявлений.</div>
-                    </div>
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">Можно ли вернуть деньги?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <div class="text">Да, 100% в первые 14 дней, после чего вы можете вернуть средства в любой
-                            момент за все неиспользованные оплаченные занятия. Если вы приняли решение прекратить
-                            обучение, просто свяжитесь с нами через личный кабинет, по электронной почте или через
-                            мессенджеры.</div>
-                    </div>
 
-                    <div class="item">
-                        <div class="title" onclick="toggleFaq(this)">В чем отличие онлайн-курса <br>
-                            от репетитора?
-                            <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewbox="0 0 47 47" fill="none">
-                                <rect width="47" height="47" rx="23.5" fill="#EAF0FF"></rect>
-                                <path d="M24 12V35" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                                <path d="M35 24H12" stroke="#5773BC" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
+                <!-- Вопрос 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какое оборудование и интернет нужны для комфортного обучения?</span>
+                        <div class="faq-icon">
+                           <div class="faq-icon-line horizontal"></div>
+                           <div class="faq-icon-line vertical"></div>
                         </div>
-                        <div class="text">У репетитора вы платите за каждый час — в среднем от 1 500 руб. При занятиях
-                            два раза в неделю это выходит от 12000 ₽ в месяц, и если тему нужно повторить — придётся
-                            оплачивать дополнительные занятия. <br><br>
-                            На нашем курсе формат онлайн-уроков, но за месяц от 5 000 ₽. В эту сумму входит два
-                            онлайн-урока в неделю, домашки, тесты и доступ к записям, чтобы ребёнок мог пересматривать
-                            объяснение столько раз, сколько нужно — бесплатно. За процесс отвечает личный куратор,
-                            который помогает с заданиями и при необходимости повторно объясняет , чтобы разобрать
-                            сложную тему.
-                            В итоге вы платите в 2–3 раза меньше, а ребёнок получает в несколько раз больше практики,
-                            обратной связи.<br><br>
-                            Репетитор работает час за часом, а курс даёт ту же живую помощь — только с записями,
-                            поддержкой и без переплат.</div>
                     </div>
+                    <div class="faq-answer">
+                        <p>Для занятий подойдёт практически любое устройство – компьютер, ноутбук, планшет или смартфон. Главное – стабильное подключение к сети интернет, которое обеспечит просмотр видео без задержек.</p>
+                    </div>
+                </div>
 
+                <!-- Вопрос 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Кто такой куратор и чем они помогают?</span>
+                        <div class="faq-icon">
+                           <div class="faq-icon-line horizontal"></div>
+                           <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Куратор помогает ребенку усваивать материал. Куратор - профессиональный преподаватель по математике, он проверит домашнюю работу, разберет вместе с ребенком ошибки, поможет их исправить и всегда будет на связи. С куратором создается чат где есть родитель и ребенок и можно общаться и лично созваниваться с куратором. С куратором невозможна ситуация «я не понял тему»</p>
+                    </div>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно оплачивать обучение материнским капиталом?</span>
+                        <div class="faq-icon">
+                           <div class="faq-icon-line horizontal"></div>
+                           <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, Вы можете оплатить обучение материнским капиталом, а также получить налоговый вычет. Поможем с оформлением документов и подачей заявлений.</p>
+                    </div>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли вернуть деньги?</span>
+                        <div class="faq-icon">
+                           <div class="faq-icon-line horizontal"></div>
+                           <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, 100% в первые 14 дней, после чего вы можете вернуть средства в любой момент за все неиспользованные оплаченные занятия. Если вы приняли решение прекратить обучение, просто свяжитесь с нами через личный кабинет, по электронной почте или через мессенджеры.</p>
+                    </div>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>В чем отличие онлайн-курса от репетитора?</span>
+                        <div class="faq-icon">
+                           <div class="faq-icon-line horizontal"></div>
+                           <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>У репетитора вы платите за каждый час — в среднем от 1 500 руб. При занятиях два раза в неделю это выходит от 12000 ₽ в месяц, и если тему нужно повторить — придётся оплачивать дополнительные занятия.<br><br>На нашем курсе формат онлайн-уроков, но за месяц от 5 000 ₽. В эту сумму входит два онлайн-урока в неделю, домашки, тесты и доступ к записям, чтобы ребёнок мог пересматривать объяснение столько раз, сколько нужно — бесплатно. За процесс отвечает личный куратор, который помогает с заданиями и при необходимости повторно объясняет, чтобы разобрать сложную тему. В итоге вы платите в 2–3 раза меньше, а ребёнок получает в несколько раз больше практики, обратной связи.<br><br>Репетитор работает час за часом, а курс даёт ту же живую помощь — только с записями, поддержкой и без переплат.</p>
+                    </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
+
+    <script>
+        // 5. JAVASCRIPT ДЛЯ РАБОТЫ АККОРДЕОНА
+        document.addEventListener('DOMContentLoaded', () => {
+            const questions = document.querySelectorAll('.faq-question');
+
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.closest('.faq-item');
+                    
+                    // Toggle (добавить/удалить) класс 'active' у родительского элемента
+                    item.classList.toggle('active');
+
+                    // --- Необязательно: закрывать другие вопросы при открытии одного ---
+                    // Если вы хотите, чтобы одновременно был открыт только один вопрос,
+                    // раскомментируйте код ниже.
+
+                    /*
+                    const allItems = document.querySelectorAll('.faq-item');
+                    allItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.add('active'); // Убедиться, что текущий открыт
+                    */
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

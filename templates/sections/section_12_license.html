@@ -1,18 +1,193 @@
-<!-- section_12_license.html - Extracted from original HTML -->
-<section class="section-11">
-            <div class="wrapper">
-                <div class="info">
-                    <h2 class="middle_title">Мы обучаем официально — <br>
-                        у нас есть государственная лицензия</h2>
-                    <p>Это значит, что вы сможете оплатить курс <br>
-                        маткапиталом или получить <span>налоговый вычет 13%</span> <br>
-                        от стоимости обучения</p>
-                    <div class="lic">
-                        <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s11ico.webp" alt="">
-                        № лицензии Л035-01220-38/00575933
-                    </div>
-                </div>
-                <div class="img"><img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s11img.webp" alt="">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секция 12: Лицензия</title>
+    <style>
+        /* Подключение шрифтов */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rubik:wght@700&display=swap');
+
+        /* 1. ПЕРЕМЕННЫЕ */
+        :root {
+            --purple: #835FF7;
+            --pink: #E8488E;
+            --yellow: #FDC741;
+            --blue: #5773BC;
+            --azure: #EAF0FF;
+            --white: #FFFFFF;
+            --black: #1A1A1A;
+            --text-secondary: #555555;
+            
+            --font-heading: 'Rubik', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: #FAFAFC; /* Светлый фон страницы */
+        }
+
+        /* 2. ОСНОВНОЙ КОНТЕЙНЕР СЕКЦИИ */
+        .section-11 {
+            padding: 80px 20px;
+            position: relative;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        /* Декоративный элемент (Параллакс / Glow на фоне) */
+        .section-11::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(131, 95, 247, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            animation: float-bg 10s ease-in-out infinite;
+        }
+
+        @keyframes float-bg {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, 20px) scale(1.1); }
+        }
+
+        .section-11 .wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Десктопная версия: перестроение в 2 колонки */
+        @media (min-width: 992px) {
+            .section-11 .wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        /* 3. ИНФОРМАЦИОННЫЙ БЛОК (ЛЕВАЯ ЧАСТЬ) */
+        .section-11 .info {
+            flex: 1;
+            text-align: center; /* На мобильных по центру */
+            max-width: 600px;
+        }
+        
+        @media (min-width: 992px) {
+            .section-11 .info {
+                text-align: left; /* На десктопе по левому краю */
+                padding-right: 40px;
+            }
+        }
+
+        .section-11 .middle_title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--black);
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+        }
+
+        .section-11 .info p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0 0 35px 0;
+            font-weight: 400;
+        }
+
+        /* Акцент на "налоговый вычет 13%" */
+        .section-11 .info p span {
+            background: linear-gradient(90deg, var(--purple) 0%, var(--pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* 4. ПЛАШКА С ЛИЦЕНЗИЕЙ */
+        .section-11 .lic {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 24px;
+            background: var(--white);
+            border-radius: 16px;
+            font-weight: 600;
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(87, 115, 188, 0.1); /* Мягкая тень цвета Blue */
+            border: 1px solid var(--azure);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .section-11 .lic img {
+            width: 36px;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        /* Hover и Glow эффекты для плашки */
+        .section-11 .lic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(131, 95, 247, 0.25); /* Glow-эффект цветом Purple */
+            border-color: rgba(131, 95, 247, 0.3);
+        }
+
+        /* 5. ИЗОБРАЖЕНИЕ (ПРАВАЯ ЧАСТЬ) */
+        .section-11 .img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .section-11 .img img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Мягкая тень для фото */
+            transition: transform 0.5s ease;
+        }
+
+        /* Микро-анимация при наведении на фото */
+        .section-11 .img img:hover {
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="section-11">
+        <div class="wrapper">
+            <div class="info">
+                <h2 class="middle_title">Мы обучаем официально — <br>
+                    у нас есть государственная лицензия</h2>
+                <p>Это значит, что вы сможете оплатить курс <br>
+                    маткапиталом или получить <span>налоговый вычет 13%</span> <br>
+                    от стоимости обучения</p>
+                <div class="lic">
+                    <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s11ico.webp" alt="Иконка лицензии">
+                    № лицензии Л035-01220-38/00575933
                 </div>
             </div>
-        </section>
+            <div class="img">
+                <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s11img.webp" alt="Фотография лицензии">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

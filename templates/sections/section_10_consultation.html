@@ -1,27 +1,262 @@
-<!-- section_10_consultation.html - Extracted from original HTML -->
-<section id="consultation" class="section-9">
-            <div class="wrapper">
-                <div class="info">
-                    <div class="title">
-                        <h2 class="middle_title">Нужна<br> консультация?</h2>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="236" height="8" viewbox="0 0 236 8" fill="none">
-                            <path d="M0.999828 6.47194C57.7014 2.8103 183.789 -2.6999 234.526 4.55242" stroke="#5773BC" stroke-opacity="0.31" stroke-width="2" stroke-linecap="round"></path>
-                        </svg>
-                    </div>
-                    <p>Задавайте любые вопросы, мы рады ответить вам</p>
-                    <div class="mc_button consult">Получить консультацию!</div>
-                    <button class="mc_button whatsapp to-popup">Узнать подробнее</button>
-                    <div class="tag"><img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9i1.webp" alt="">Бесплатно</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исправленная секция 10 (Финальная версия)</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@700&display=swap');
+
+        :root {
+            --color-purple: #835FF7;
+            --color-pink: #E8488E;
+            --color-blue: #5773BC;
+            --color-white: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #555;
+            --background-section: #f8f9ff;
+            --font-heading: 'Rubik', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-section);
+            margin: 0;
+        }
+
+        .section-10 {
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-10 .wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .section-10 .wrapper {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+        }
+
+        .section-10 .info-column {
+            text-align: center;
+        }
+        
+        @media (min-width: 992px) {
+            .section-10 .info-column {
+                text-align: left;
+            }
+        }
+
+        .section-10 .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: var(--color-white);
+            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-pink) 100%);
+            border-radius: 50px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .section-10 .tag:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        /* ===== ГЛАВНОЕ ИСПРАВЛЕНИЕ - НАЧАЛО ===== */
+        .section-10 .title {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* На десктопе - влево */
+        }
+
+        .section-10 .title h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin: 0 0 15px 0;
+        }
+
+        .section-10 .title svg {
+            display: block;
+            max-width: 236px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* На мобильных устройствах центрируем всё */
+        @media (max-width: 991.98px) {
+            .section-10 .title {
+                align-items: center; /* Центрируем на мобильных */
+            }
+        }
+        /* ===== ГЛАВНОЕ ИСПРАВЛЕНИЕ - КОНЕЦ ===== */
+
+        .section-10 .info-column > p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin: 25px 0;
+            line-height: 1.6;
+        }
+
+        .section-10 .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        @media (min-width: 992px) {
+            .section-10 .buttons-container {
+                justify-content: flex-start;
+            }
+        }
+
+        .section-10 .mc_button {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .section-10 .mc_button.consult {
+            background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-pink) 100%);
+            color: var(--color-white);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        .section-10 .mc_button.consult:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .section-10 .mc_button.whatsapp {
+            background: var(--color-white);
+            color: var(--text-primary);
+            border-color: #e0e0e0;
+        }
+        
+        .section-10 .mc_button.whatsapp:hover {
+            transform: translateY(-3px);
+            border-color: var(--color-purple);
+        }
+
+        .section-10 .media-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .section-10 .main-photo {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+        
+        @media (max-width: 991.98px) {
+            .section-10 .main-photo {
+                display: none;
+            }
+        }
+        
+        .section-10 .gift-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            max-width: 380px;
+            width: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .section-10 .gift-box p {
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .section-10 .gift-box p span {
+            color: var(--color-purple);
+            font-weight: 600;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="section-10">
+        <div class="wrapper">
+
+            <!-- Левая колонка -->
+            <div class="info-column">
+                <div class="tag">
+                    <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9i1.webp" alt="Иконка">
+                    Бесплатно
                 </div>
-                <div class="giv"><img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9ico2.webp" alt="">
+                <div class="title">
+                    <h2>Нужна<br> консультация?</h2>
+                    <!-- Подчеркивание -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="236" height="8" viewBox="0 0 236 8" fill="none">
+                        <path d="M0.999828 6.47194C57.7014 2.8103 183.789 -2.6999 234.526 4.55242" stroke="var(--color-blue)" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <p>Задавайте любые вопросы, мы рады ответить вам</p>
+                <div class="buttons-container">
+                    <a href="#" class="mc_button consult">Получить консультацию!</a>
+                    <a href="#" class="mc_button whatsapp">Узнать подробнее</a>
+                </div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="media-column">
+                <img class="main-photo" src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9img.webp" alt="Консультант">
+                <div class="gift-box">
+                    <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9ico2.webp" alt="Подарок">
                     <p>
                         В подарок отдадим 1 пробный урок <br>
-                        «Раскрытие скобок» — <span>про раскрытие скобок</span></p>
+                        «Раскрытие скобок» — <span>про раскрытие скобок</span>
+                    </p>
                 </div>
-
             </div>
-            <picture>
-                <source media="(max-width: 768px)" srcset="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9img-m.webp">
-                <img class="s9-man" src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s9img.webp" alt="">
-            </source></picture>
-        </section>
+
+        </div>
+    </section>
+
+</body>
+</html>
