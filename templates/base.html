@@ -19,27 +19,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', path='/css/original_styles.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/main.css') }}">-->
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/components.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/sections.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}"> 
+    <!-- 
+        CSS STRUCTURE (Порядок загрузки важен!):
+        ========================================
+        1. COMMON - Глобальные стили (переменные, типографика, анимации, утилиты)
+        2. DESIGN-SYSTEM - Дизайн-система
+        3. HEADER - Стили шапки
+        4. BURGER-MENU - Мобильное меню
+        5. COMPONENTS - Переиспользуемые компоненты (модалки, аккордеоны)
+        6. SECTIONS - Стили конкретных секций (hero, subjects, benefits...)
+        7. RESPONSIVE - Адаптивность (загружать последней)
+    -->
+    
+    <!-- 1. COMMON - Глобальные стили (обязательно первым!) -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/design-system.css') }}">
+    
+    <!-- 2. HEADER - Шапка сайта -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/burger-menu.css') }}">
+    
+    <!-- 3. COMPONENTS - Переиспользуемые компоненты -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/components.css') }}">
+    
+    <!-- 4. SECTIONS - Стили секций -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/sections.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/hero-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/subjects-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/benefits-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/author-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/calendar-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/info-section.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/info-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/packages-section.css') }}">
-     <link rel="stylesheet" href="{{ url_for('static', path='css/faq-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/section-license.css') }}">
- <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/footer.css') }}">
-   
- 
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/consultation-section.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/faq-section.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/section-license.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/footer.css') }}">
+    
+    <!-- 5. RESPONSIVE - Адаптивность (загружать последней) -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}">
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body class="mc_middle">
@@ -48,7 +69,6 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-    
 
     {% include 'partials/footer.html' %}
     <!-- Scripts -->
@@ -57,7 +77,6 @@
     <script src="{{ url_for('static', path='/js/main.js') }}" defer></script>
     
     <script>
-        // Debug: check if JS is loading
         console.log('Base template script loaded');
         window.addEventListener('load', function() {
             console.log('Window loaded completely');
