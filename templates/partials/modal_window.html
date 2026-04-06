@@ -1,0 +1,99 @@
+<div class="mc_popup mc_popup--callback" id="popup-callback">
+    <div class="mc_popup__wrapper">
+        <button class="mc_popup__close" onclick="closePopup('callback')" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <!-- Decorative Background -->
+        <div class="mc_popup__decorator"></div>
+        
+        <div class="mc_popup__content-wrapper">
+            <!-- Left Side - Text Content -->
+            <div class="mc_popup__info">
+                <h2 class="mc_popup__heading">Заказать звонок</h2>
+                <p class="mc_popup__description">
+                    Оставьте свои контактные данные, и мы перезвоним вам в течение 15 минут
+                </p>
+                
+                <div class="mc_popup__benefits">
+                    <div class="mc_popup__benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#5773bc" opacity="0.2"/>
+                            <path d="M8 12L11 15L16 9" stroke="#5773bc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Бесплатная консультация</span>
+                    </div>
+                    <div class="mc_popup__benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#5773bc" opacity="0.2"/>
+                            <path d="M8 12L11 15L16 9" stroke="#5773bc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Подберем оптимальный курс</span>
+                    </div>
+                    <div class="mc_popup__benefit-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="#5773bc" opacity="0.2"/>
+                            <path d="M8 12L11 15L16 9" stroke="#5773bc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Ответим на все вопросы</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Form -->
+            <div class="mc_popup__form-container">
+                <form class="wpcf7-form" action="/api/submit-form" method="POST">
+                    <h3 class="mc_popup__form-title">Заполните форму</h3>
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="+7 (___) ___-____" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email (необязательно)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="class_select" required>
+                            <option value="">Выберите класс</option>
+                            <option value="7 класс">7 класс</option>
+                            <option value="8 класс">8 класс</option>
+                            <option value="9 класс">9 класс</option>
+                            <option value="10 класс">10 класс</option>
+                            <option value="11 класс">11 класс</option>
+                        </select>
+                        <div class="select-arrow">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.41667 1L6.45833 6L11.5 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden UTM fields -->
+                    <input type="hidden" name="utm_source" id="utm_source_popup" value="">
+                    <input type="hidden" name="utm_medium" id="utm_medium_popup" value="">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign_popup" value="">
+                    <input type="hidden" name="utm_term" id="utm_term_popup" value="">
+                    <input type="hidden" name="utm_content" id="utm_content_popup" value="">
+                    
+                    <button type="submit" class="mc_popup__submit">
+                        Жду звонка
+                    </button>
+                    
+                    <div class="mc_popup__accept">
+                        <input type="checkbox" checked required id="accept-callback">
+                        <label for="accept-callback">
+                            Я даю <a href="/docs/soglasie.pdf" target="_blank">согласие</a> на обработку персональных данных
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

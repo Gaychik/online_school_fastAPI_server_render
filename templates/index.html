@@ -2,6 +2,20 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block extra_css %}
+<style>
+  .site-footer, .site-footer * {
+    background: #1e293b !important;
+    color: #f1f5f9 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .site-footer a { color: #90cdf4 !important; }
+  .site-footer .footer-bottom { border-top-color: #475569 !important; }
+</style>
+{% endblock %}
+
 {% block content %}
 
 <!-- Banner Section -->
@@ -47,6 +61,9 @@
 
 {% endblock %}
 
+
+
+
 {% block extra_js %}
 <script>
 // Banner Timer Countdown
@@ -82,5 +99,10 @@ function copyPromoCode() {
         }, 2000);
     });
 }
+
+
+
+
 </script>
 {% endblock %}
+{% include 'partials/modal_window.html' %}
