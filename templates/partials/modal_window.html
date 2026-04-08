@@ -44,7 +44,7 @@
             
             <!-- Right Side - Form -->
             <div class="mc_popup__form-container">
-                <form class="wpcf7-form" action="/api/submit-form" method="POST">
+                <form class="wpcf7-form" id="lesson-form" method="POST">
                     <h3 class="mc_popup__form-title">Заполните форму</h3>
                     
                     <div class="form-group">
@@ -85,6 +85,8 @@
                     <button type="submit" class="mc_popup__submit">
                         Жду звонка
                     </button>
+                    
+                    <div class="form-message" id="popup-form-message" style="display:none;"></div>
                     
                     <div class="mc_popup__accept">
                         <input type="checkbox" checked required id="accept-callback">

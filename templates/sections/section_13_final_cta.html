@@ -32,6 +32,100 @@
           </li>
         </ul>
 
+       <!-- Внутри <form class="cta-form"> -->
+
+<form class="cta-form wpcf7-form" id="free-lesson-form"  novalidate> 
+  
+  <!-- Добавьте поля имени и телефона -->
+  <div class="form-group">
+    <label for="name">Ваше имя</label>
+    <input type="text" id="name" name="name" placeholder="Иван Иванов" required 
+           pattern="[\u0400-\u04FF\s]{2,100}" title="Минимум 2 буквы">
+  </div>
+  
+  <div class="form-group">
+    <label for="phone">Телефон</label>
+    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required
+           pattern="^[\d\+\s\-\(\)]{10,20}$">
+  </div>
+  
+  <div class="form-group">
+    <label for="grade-select">Выбери класс</label>
+    <select id="grade-select" name="class_select" class="custom-select" required>
+      <option value="7 класс">7 класс</option>
+      <option value="8 класс">8 класс</option>
+    </select>
+  </div>
+  
+  
+  <!-- Скрытые UTM поля -->
+  <input type="hidden" name="utm_source" id="utm_source" value="">
+  <input type="hidden" name="utm_medium" id="utm_medium" value="">
+  <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+  <input type="hidden" name="utm_term" id="utm_term" value="">
+  <input type="hidden" name="utm_content" id="utm_content" value="">
+  
+  <button type="submit" class="btn-cta glow-effect" id="submit-btn">
+    <span class="btn-text">Получить бесплатный урок</span>
+    <span class="btn-loader" style="display:none">⏳ Отправка...</span>
+  </button>
+  
+  <label class="checkbox-label">
+    <input type="checkbox" required>
+    <span class="checkbox-text">Я даю согласие на обработку моих персональных данных и подтверждаю ознакомление с <a href="/privacy">политикой конфиденциальности</a>.</span>
+  </label>
+  
+  <!-- Сообщение об успехе/ошибке -->
+  <div class="form-message" id="form-message" style="display:none;"></div>
+</form>
+      </div>
+
+      <!-- Правая часть: Визуал (Parallax) -->
+      <div class="cta-visual fade-in-up parallax-container" data-delay="300">
+        <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12img.webp" alt="Ученик на уроке" class="parallax-img" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', path='js/final_cta.js') }}" defer></script>
+
+
+<!-- <section class="cta-section" id="section-13">
+  <div class="container">
+    <div class="cta-grid">
+      
+   
+      <div class="cta-content fade-in-up" data-delay="0">
+        <div class="trust-badge">
+          <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12ic1.webp" alt="icon" loading="lazy">
+          <span class="stat">97%</span>
+          <span class="stat-text">Довольны курсом</span>
+        </div>
+
+        <h2 class="cta-title">Бесплатный урок по математике</h2>
+        <p class="cta-desc">Оставляйте заявку! Наш менеджер свяжется с вами и предоставит бесплатный доступ к уроку</p>
+
+        <ul class="cta-features">
+          <li class="fade-in-up" data-delay="100">
+            <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12i1.webp" alt="icon" loading="lazy">
+            <span>Поймёте, как мы объясняем просто и по-человечески</span>
+          </li>
+          <li class="fade-in-up" data-delay="150">
+            <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12i2.webp" alt="icon" loading="lazy">
+            <span>Увидите, как проходит обучение и реагирует ребёнок</span>
+          </li>
+          <li class="fade-in-up" data-delay="200">
+            <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12i3.webp" alt="icon" loading="lazy">
+            <span>Разберёте одну из тем программы 7 или 8 класса</span>
+          </li>
+          <li class="fade-in-up" data-delay="250">
+            <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12i4.webp" alt="icon" loading="lazy">
+            <span>Получите материалы и запись урока</span>
+          </li>
+        </ul>
+
         <form class="cta-form" action="#" method="POST">
           <div class="form-group">
             <label for="grade-select">Выбери класс</label>
@@ -50,7 +144,7 @@
         </form>
       </div>
 
-      <!-- Правая часть: Визуал (Parallax) -->
+    
       <div class="cta-visual fade-in-up parallax-container" data-delay="300">
         <img src="https://el-ed.ru/wp-content/themes/egeland/middle/img/s12img.webp" alt="Ученик на уроке" class="parallax-img" loading="lazy">
       </div>
@@ -59,4 +153,4 @@
   </div>
 </section>
 
-<script src="{{ url_for('static', path='js/final_cta.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/final_cta.js') }}" defer></script> -->
