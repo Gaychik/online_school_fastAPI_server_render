@@ -10,6 +10,9 @@ from contextlib import asynccontextmanager
 import uvicorn
 import os
 from dotenv import load_dotenv
+import json
+from pathlib import Path
+
 
 from database import init_db, async_session_maker, FormSubmission,engine,AsyncSession
 
@@ -38,6 +41,10 @@ app.add_middleware(
 # Static & Templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+
+# 🔥 Правильный способ: путь от местоположения этого файла
+BASE_DIR = Path(__file__).resolve().parent
+PROGRAMS_PATH = BASE_DIR / "data" / "programs.json"
 
 
 # === Pydantic модели для валидации ===
@@ -121,10 +128,16 @@ async def save_submission(
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
+     # Читаем данные один раз при старте или кэшируем в продакшене
+ 
+    programs = json.loads(PROGRAMS_PATH.read_text(encoding="utf-8"))
+    
     return templates.TemplateResponse("index.html", {
         "request": request,
-        "title": "ЮНАЙТ - Онлайн школа математики и программирования для школьников"
+        "title": "ЮНАЙТ - Онлайн школа математики и программирования для школьников",
+        "programs": programs  # ← Передаём в Jinja2
     })
+
 
 
 # 🔹 НОВЫЙ: Обработка формы бесплатного урока

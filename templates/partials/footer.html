@@ -1,46 +1,45 @@
-<footer class="site-footer" id="site-footer">
+<footer class="site-footer">
   <div class="footer-container">
     <div class="footer-grid">
-      <div class="footer-col">
-        <h3>Онлайн-школа для подготовки к ЕГЭ и ОГЭ</h3>
-        <p>Готовим к экзаменам с 2024 года</p>
-        <button class="btn-open-modal js-open-modal" type="button">Заказать звонок</button>
-      </div>
-      <nav class="footer-col">
-        <h4>Навигация</h4>
+      
+      <!-- Карточка 1: Навигация -->
+      <div class="footer-card">
+        <h4 class="footer-card__title">Навигация</h4>
         <ul class="footer-list">
           <li><a href="#about">О школе</a></li>
           <li><a href="#programs">Программы</a></li>
           <li><a href="#reviews">Отзывы</a></li>
           <li><a href="#prices">Цены</a></li>
         </ul>
-      </nav>
-      <div class="footer-col">
-        <h4>Контакты</h4>
-        <a href="tel:+78000000000" class="contact-link">8 (800) 000-00-00</a>
-        <a href="mailto:info@el-ed.ru" class="contact-link">info@el-ed.ru</a>
-        <div class="socials">
-          <a href="#" class="social-link" aria-label="VK">VK</a>
-          <a href="#" class="social-link" aria-label="Telegram">TG</a>
-        </div>
       </div>
-      <div class="footer-col">
-        <h4>Документы</h4>
+
+      <!-- Карточка 2: Документы -->
+      <div class="footer-card">
+        <h4 class="footer-card__title">Документы</h4>
         <ul class="footer-list">
           <li><a href="/docs/policy.pdf">Политика конфиденциальности</a></li>
           <li><a href="/docs/soglasie.pdf">Согласие на обработку данных</a></li>
           <li><a href="/docs/license.pdf">Лицензия</a></li>
         </ul>
       </div>
+
+      <!-- Карточка 3: Контакты -->
+      <div class="footer-card">
+        <h4 class="footer-card__title">Контакты</h4>
+        <ul class="footer-list">
+          <li><a href="tel:+78000000000" class="contact-link">8 (800) 000-00-00</a></li>
+          <li><a href="mailto:info@el-ed.ru" class="contact-link">info@el-ed.ru</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="VK">VK</a>
+          <a href="#" class="social-btn" aria-label="TG">TG</a>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-bottom">© 2024 ЕГЭЛЭНД. Все права защищены.</div>
+
+    <div class="footer-bottom">
+      <p>© 2026 ЮНАЙТ. Онлайн-школа математике и программирования. Все права защищены.</p>
+    </div>
   </div>
 </footer>
-
-
-
-<script src="{{ url_for('static', path='js/footer.js') }}" defer></script>
-
-
-
-

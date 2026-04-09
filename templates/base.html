@@ -48,9 +48,8 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/subjects-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/benefits-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/author-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/calendar-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/info-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews-section.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/packages-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/consultation-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/faq-section.css') }}">
@@ -61,6 +60,8 @@
 
     <!-- 5. RESPONSIVE - Адаптивность (загружать последней) -->
     <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/calendar-section.css') }}">
+
     
     {% block extra_css %}{% endblock %}
 </head>
@@ -76,7 +77,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ url_for('static', path='/js/animations-gsap.js') }}"></script>
     <script src="{{ url_for('static', path='/js/main.js') }}" defer></script>
-       <script src="{{ url_for('static', path='/js/form.js') }}" defer></script>
+    <script src="{{ url_for('static', path='/js/form.js') }}" defer></script>
     <script>
         console.log('Base template script loaded');
         window.addEventListener('load', function() {
