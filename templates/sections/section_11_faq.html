@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Модифицированная секция FAQ</title>
-   
-</head>
-<body>
-
     <section class="faq-section">
         <div class="faq-container">
             <h2 class="faq-main-title">Частые вопросы</h2>
@@ -101,36 +91,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // 5. JAVASCRIPT ДЛЯ РАБОТЫ АККОРДЕОНА
-        document.addEventListener('DOMContentLoaded', () => {
-            const questions = document.querySelectorAll('.faq-question');
-
-            questions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const item = question.closest('.faq-item');
-                    
-                    // Toggle (добавить/удалить) класс 'active' у родительского элемента
-                    item.classList.toggle('active');
-
-                    // --- Необязательно: закрывать другие вопросы при открытии одного ---
-                    // Если вы хотите, чтобы одновременно был открыт только один вопрос,
-                    // раскомментируйте код ниже.
-
-                    /*
-                    const allItems = document.querySelectorAll('.faq-item');
-                    allItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    item.classList.add('active'); // Убедиться, что текущий открыт
-                    */
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
+    
+ <script src="{{ url_for('static', path='/js/faq.js') }}" defer></script>

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> 
+ 
     
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -50,8 +50,8 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/author-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/info-section.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', path='/css/reviews-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/packages-section.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/consultation-section.css') }}">
+ 
+ 
     <link rel="stylesheet" href="{{ url_for('static', path='/css/faq-section.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/section-license.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/final_cta.css') }}">
@@ -59,10 +59,11 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/css/footer.css') }}">
 
     <!-- 5. RESPONSIVE - Адаптивность (загружать последней) -->
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', path='/css/responsive.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', path='/css/calendar-section.css') }}">
 
-    
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/consultation-section.css') }}">
+ <link rel="stylesheet" href="{{ url_for('static', path='/css/packages-section.css') }}">
     {% block extra_css %}{% endblock %}
 </head>
 <body class="mc_middle">
