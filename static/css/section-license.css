@@ -1,0 +1,141 @@
+﻿/* ========================================
+   SECTION 11 - LICENSE (РЎРµРєС†РёСЏ Р»РёС†РµРЅР·РёРё)
+   ======================================== */
+
+/* РћСЃРЅРѕРІРЅРѕР№ РєРѕРЅС‚РµР№РЅРµСЂ СЃРµРєС†РёРё */
+.section-11 {
+    padding: 80px 20px;
+    position: relative;
+    background: var(--brand-white);
+    overflow: hidden;
+}
+
+/* Р”РµРєРѕСЂР°С‚РёРІРЅС‹Р№ СЌР»РµРјРµРЅС‚ (Glow РЅР° С„РѕРЅРµ) */
+.section-11::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(131, 95, 247, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    animation: float-bg 10s ease-in-out infinite;
+}
+
+@keyframes float-bg {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-20px, 20px) scale(1.1); }
+}
+
+.section-11 .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Р”РµСЃРєС‚РѕРїРЅР°СЏ РІРµСЂСЃРёСЏ: РїРµСЂРµСЃС‚СЂРѕРµРЅРёРµ РІ 2 РєРѕР»РѕРЅРєРё */
+@media (min-width: 992px) {
+    .section-11 .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* РРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹Р№ Р±Р»РѕРє (Р»РµРІР°СЏ С‡Р°СЃС‚СЊ) */
+.section-11 .info {
+    flex: 1;
+    text-align: center;
+    max-width: 600px;
+}
+
+@media (min-width: 992px) {
+    .section-11 .info {
+        text-align: left;
+        padding-right: 40px;
+    }
+}
+
+.section-11 .middle_title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--brand-black);
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.section-11 .info p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 35px 0;
+    font-weight: 400;
+}
+
+/* РђРєС†РµРЅС‚ РЅР° "РЅР°Р»РѕРіРѕРІС‹Р№ РІС‹С‡РµС‚ 13%" */
+.section-11 .info p span {
+    background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* РџР»Р°С€РєР° СЃ Р»РёС†РµРЅР·РёРµР№ */
+.section-11 .lic {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 24px;
+    background: var(--brand-white);
+    border-radius: 16px;
+    font-weight: 600;
+    color: var(--brand-black);
+    box-shadow: 0 10px 30px rgba(87, 115, 188, 0.1);
+    border: 1px solid var(--brand-azure);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.section-11 .lic img {
+    width: 36px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Hover Рё Glow СЌС„С„РµРєС‚С‹ РґР»СЏ РїР»Р°С€РєРё */
+.section-11 .lic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(131, 95, 247, 0.25);
+    border-color: rgba(131, 95, 247, 0.3);
+}
+
+/* РР·РѕР±СЂР°Р¶РµРЅРёРµ (РїСЂР°РІР°СЏ С‡Р°СЃС‚СЊ) */
+.section-11 .img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-11 .img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease;
+}
+
+/* РњРёРєСЂРѕ-Р°РЅРёРјР°С†РёСЏ РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° С„РѕС‚Рѕ */
+.section-11 .img img:hover {
+    transform: scale(1.02);
+}
+

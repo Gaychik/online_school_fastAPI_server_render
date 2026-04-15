@@ -1,0 +1,554 @@
+﻿/* ========================================
+SECTION 3 - BENEFITS (Как устроена учёба)
+✅ Чистая реализация: Grid на десктопе + кастомный слайдер на мобильном
+✅ Без сторонних библиотек
+======================================== */
+.section-3 {
+  padding: 80px 0;
+  background: var(--brand-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Фоновые градиенты */
+.section-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-3 .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Заголовок */
+.section-3 .middle_title {
+  margin-bottom: 56px;
+  position: relative;
+  text-align: center;
+}
+
+.section-3 .middle_title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* ===== DESKTOP GRID ===== */
+.section-3 .wrapper.dtop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+/* ===== CARD STYLES ===== */
+.section-3 .item {
+  background: var(--brand-white);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: all 0.4s var(--transition-bezier);
+  position: relative;
+  overflow: hidden;
+  height: auto; /* ✅ Ключевое: не фиксируем высоту */
+}
+
+.section-3 .item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-3 .item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium), var(--shadow-glow-purple);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.section-3 .item:hover::before {
+  opacity: 1;
+}
+
+/* TAG */
+.section-3 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(236, 72, 153, 0.15));
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand-purple);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.section-3 .tag img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.section-3 .item:hover .tag {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.25), rgba(236, 72, 153, 0.25));
+  color: var(--brand-pink);
+  transform: scale(1.05);
+}
+
+/* HEADINGS */
+.section-3 .item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin: 0;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.section-3 .item h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* IMAGE */
+.section-3 .img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(236, 72, 153, 0.1));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.section-3 .img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.section-3 .item:hover .img::after {
+  opacity: 1;
+}
+
+.section-3 .img img,
+.section-3 .img picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.section-3 .item:hover .img img {
+  transform: scale(1.08);
+}
+
+/* ARROWS on images */
+.section-3 .img .arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-white);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), 0 0 12px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  animation: floatArrow 3s ease-in-out infinite;
+}
+
+.section-3 .img .arrow span {
+  white-space: nowrap;
+}
+
+.section-3 .img .arrow svg {
+  width: 18px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+@keyframes floatArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.style-1 {
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  animation-delay: 0s;
+}
+.style-2 {
+  top: 56px;
+  left: 16px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #ff845e);
+  animation-delay: 0.4s;
+}
+.style-3 {
+  bottom: 32px;
+  right: 24px;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #6366f1);
+  animation-delay: 0.8s;
+}
+
+/* TEXT */
+.section-3 .item p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* SPECIAL LAYOUTS */
+.section-3 .i-03 {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-3 .i-03 .img {
+  flex: 1;
+  min-height: 240px;
+}
+
+.section-3 .i-04 {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.section-3 .i-04 .img {
+  height: 180px;
+  margin: 0;
+}
+
+.section-3 .wrapp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.section-3 .users img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--brand-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-3 .deco-bubble {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  z-index: 1;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+}
+
+.section-3 .item:hover .deco-bubble {
+  transform: scale(1.1) translateY(-4px);
+}
+
+/* ===== MOBILE CUSTOM SLIDER (замена Swiper) ===== */
+.benefits-slider-mobile {
+  display: none;
+  position: relative;
+  padding: 0 4px 50px;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.benefits-slider-mobile .slider-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+.benefits-slider-mobile .slide-item {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.benefits-slider-mobile .item {
+  padding: 20px;
+  border-radius: 20px;
+  height: auto;
+  min-height: unset;
+}
+
+.benefits-slider-mobile .img {
+  height: 180px;
+  min-height: unset;
+}
+
+.benefits-slider-mobile .tag {
+  font-size: 0.8rem;
+  padding: 8px 14px;
+}
+
+.benefits-slider-mobile h3 {
+  font-size: 1.2rem;
+}
+
+.benefits-slider-mobile p {
+  font-size: 0.9rem;
+}
+
+.benefits-slider-mobile .arrow,
+.benefits-slider-mobile .deco-bubble {
+  display: none;
+}
+
+/* Slider navigation */
+.benefits-slider-mobile .slider-nav {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.benefits-slider-mobile .slider-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.benefits-slider-mobile .slider-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45);
+}
+
+.benefits-slider-mobile .slider-btn:active {
+  transform: scale(0.95);
+}
+
+.benefits-slider-mobile .slider-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.benefits-slider-mobile .slider-pagination {
+  display: flex;
+  gap: 6px;
+}
+
+.benefits-slider-mobile .pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.benefits-slider-mobile .pagination-dot.active {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .section-3 { padding: 64px 0; }
+  .section-3 .wrapper.dtop {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .section-3 .i-03 {
+    grid-row: auto;
+    grid-column: span 2;
+  }
+  .section-3 .i-04 {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .section-3 .i-04 .img { height: 200px; }
+}
+
+@media (max-width: 768px) {
+  .section-3 { padding: 48px 0; }
+  .section-3 .middle_title {
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+  }
+  .section-3 .middle_title::after {
+    width: 60px;
+    bottom: -16px;
+  }
+  /* Скрываем десктоп-грид */
+  .section-3 .wrapper.dtop {
+    display: none !important;
+  }
+  /* Показываем кастомный слайдер */
+  .benefits-slider-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-3 { padding: 40px 0; }
+  .section-3 .middle_title { font-size: 1.5rem; }
+  .section-3 .item { padding: 18px; border-radius: 16px; }
+  .section-3 .img { height: 140px; }
+  .section-3 .tag { font-size: 0.75rem; padding: 6px 12px; gap: 8px; }
+  .section-3 .tag img { width: 16px; height: 16px; }
+  .section-3 .item h3 { font-size: 1.125rem; }
+  .section-3 .item p { font-size: 0.875rem; }
+  .benefits-slider-mobile .img { height: 160px; }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.section-3 .item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-3 .item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-3 .item:nth-child(1) { transition-delay: 0.1s; }
+.section-3 .item:nth-child(2) { transition-delay: 0.2s; }
+.section-3 .item:nth-child(3) { transition-delay: 0.3s; }
+.section-3 .item:nth-child(4) { transition-delay: 0.4s; }
+.section-3 .item:nth-child(5) { transition-delay: 0.5s; }
+
+
+
+
+/* ===== ПЛАВНЫЕ ПЕРЕХОДЫ ДЛЯ КАРТОЧЕК ===== */
+
+/* Основной контейнер карточки - разбиваем transition на конкретные свойства */
+.section-3 .item {
+  /* Было: transition: all 0.4s var(--transition-bezier); */
+  /* Стало: конкретные свойства + мягкий easing + fallback */
+  transition: 
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s ease;
+  will-change: transform; /* Оптимизация для браузера */
+}
+
+/* Градиентная полоска сверху */
+.section-3 .item::before {
+  transition: opacity 0.4s ease;
+}
+
+/* TAG - плавное увеличение и смена цвета */
+.section-3 .tag {
+  transition: 
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+
+/* Заголовок - линия под ним */
+.section-3 .item h3::after {
+  transition: 
+    width 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* Изображение - рамка и масштаб */
+.section-3 .img::after {
+  transition: opacity 0.4s ease;
+}
+
+.section-3 .img img,
+.section-3 .img picture {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Декоративные элементы */
+.section-3 .deco-bubble {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== БОНУС: ещё более мягкий ховер-эффект ===== */
+/* Если хотите чуть менее агрессивную анимацию, раскомментируйте ниже: */
+
+
+.section-3 .item:hover {
+  transform: translateY(-6px); /* чуть меньше подъём */
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 30px rgba(139, 92, 246, 0.15); /*мягче свечение */
+}

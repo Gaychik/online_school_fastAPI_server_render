@@ -1,0 +1,360 @@
+﻿/* ========================================
+   HERO SECTION - NEW DESIGN 2026
+   Requirements: glow effects, soft shadows, brand colors
+   ======================================== */
+
+.section-1 {
+    padding: 80px 0 60px;
+    margin-top: 80px; /* Offset for fixed header */
+}
+
+.section-1__row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.section-1 .col {
+    flex: 1;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 10px 40px rgba(167, 139, 250, 0.15);
+    transition: all 0.3s ease;
+}
+
+.section-1 .col:hover {
+    box-shadow: 0 15px 50px rgba(167, 139, 250, 0.25),
+                0 0 20px rgba(236, 72, 153, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Left Column - Content */
+.section-1 .wrapp {
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.section-1 .wrapp ul {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    list-style: none;
+}
+
+.section-1 .wrapp ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Online tag - Purple */
+.section-1 .wrapp .but_online {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(167, 139, 250, 0.2));
+    color: #A78BFA;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
+}
+
+/* Individual approach tag - Pink */
+.section-1 .wrapp .but_podhod {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(236, 72, 153, 0.2));
+    color: #EC4899;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+}
+
+.section-1 .wrapp ul li img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    
+}
+
+/* H1 Heading with underline */
+.section-1 h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 103%;
+    letter-spacing: -3px;
+    color: #2a2a29;
+    margin: 0 0 16px 0;
+    position: relative;
+}
+
+.section-1 h1 span {
+    background: linear-gradient(135deg, #A78BFA 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.section-1 h1 svg {
+    display: block;
+    margin-left: -4px;
+    margin-top: 8px;
+}
+
+.section-1 h1 svg path {
+    stroke: url(#gradient-line); /* Will be replaced by CSS gradient */
+    stroke: #A78BFA;
+    stroke-opacity: 0.5;
+}
+
+/* Description text */
+.section-1 p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 124%;
+    letter-spacing: -0.72px;
+    color: #77797f;
+    margin: 0 0 24px 0;
+    max-width: 500px;
+}
+
+/* CTA Button - Yellow/Amber gradient */
+.section-1 .mc_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px;
+    min-width: 280px;
+    border-radius: 1000px;
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    color: #1F2937; /* Black text for contrast */
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700; /* Bold for emphasis */
+    text-transform: uppercase;
+    letter-spacing: -0.56px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4),
+                0 0 15px rgba(245, 158, 11, 0.3);
+    margin-bottom: 28px;
+}
+
+.section-1 .mc_button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(251, 191, 36, 0.5),
+                0 0 25px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+}
+
+.section-1 .mc_button:active {
+    transform: translateY(-1px);
+}
+
+/* Tags (ratings) */
+.section-1 .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-top: auto;
+}
+
+.section-1 .tags li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    background: #f2f3f4;
+    border-radius: 708px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #77797f;
+    transition: all 0.3s ease;
+}
+
+.section-1 .tags li:hover {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(236, 72, 153, 0.1));
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.2);
+}
+
+.section-1 .tags li svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Right Column - Image */
+.section-1 .img {
+    position: relative;
+    min-height: 500px;
+    background: url("/static/img/Dmitriy.jpg") center 10% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+/* Info box overlay - Purple/Pink gradient */
+.section-1 .img .info {
+    position: relative;
+    z-index: 2;
+    padding: 24px 30px 28px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.85), rgba(236, 72, 153, 0.85));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.885px;
+    box-shadow: 0 10px 40px rgba(167, 139, 250, 0.4),
+                0 0 20px rgba(236, 72, 153, 0.3);
+    transition: all 0.3s ease;
+}
+
+.section-1 .img .info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(167, 139, 250, 0.5),
+                0 0 30px rgba(236, 72, 153, 0.4);
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.9), rgba(236, 72, 153, 0.9));
+}
+
+.section-1 .img .info span {
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Date badge - Blue/Azure gradient */
+.section-1 .img .date {
+    position: absolute;
+    bottom: calc(100% - 20px);
+    right: 38px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 40px;
+    background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+    border-radius: 83px;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -0.74px;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4),
+                0 0 15px rgba(6, 182, 212, 0.3);
+    transform: rotate(-10deg);
+}
+
+.section-1 .img .date .arrow {
+    position: absolute;
+    left: -22px;
+    top: -15px;
+    transform: rotate(11deg);
+}
+
+.section-1 .img .date .arrow svg {
+    width: 30px;
+    height: 26px;
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+}
+
+.section-1 .img .date .arrow path {
+    fill: #3B82F6;
+    stroke: #FFFFFF;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-1 {
+        padding: 60px 0 40px;
+        margin-top: 70px;
+    }
+    
+    .section-1__row {
+        flex-direction: column;
+    }
+    
+    .section-1 h1 {
+        font-size: 36px;
+    }
+    
+    .section-1 p {
+        font-size: 16px;
+    }
+    
+    .section-1 .mc_button {
+        min-width: 240px;
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+    
+    .section-1 .img {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-1 {
+        padding: 40px 0 30px;
+        margin-top: 60px;
+    }
+    
+    .section-1 .wrapp {
+        padding: 30px 24px;
+    }
+    
+    .section-1 h1 {
+        font-size: 28px;
+        letter-spacing: -2px;
+    }
+    
+    .section-1 p {
+        font-size: 15px;
+    }
+    
+    .section-1 .mc_button {
+        min-width: 100%;
+        padding: 14px 28px;
+    }
+    
+    .section-1 .tags {
+        gap: 8px;
+    }
+    
+    .section-1 .tags li {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+    
+    .section-1 .img {
+        min-height: 350px;
+    }
+    
+    .section-1 .img .info {
+        font-size: 18px;
+        padding: 20px;
+    }
+    
+    .section-1 .img .date {
+        font-size: 16px;
+        padding: 8px 30px;
+    }
+}
+

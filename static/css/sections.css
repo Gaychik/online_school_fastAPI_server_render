@@ -1,0 +1,154 @@
+﻿/* ========================================
+   SECTIONS - РћР±С‰РёРµ СЃС‚РёР»Рё РґР»СЏ СЃРµРєС†РёР№
+   (layout, wrapper, РѕР±С‰РёРµ СЌР»РµРјРµРЅС‚С‹)
+   ======================================== */
+
+/* ========================================
+   1. SECTION WRAPPER - РћР±С‘СЂС‚РєР° РґР»СЏ СЃРµРєС†РёРё
+   ======================================== */
+.section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.section .row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ========================================
+   2. SECTION BACKGROUNDS - Р¤РѕРЅС‹ СЃРµРєС†РёР№
+   ======================================== */
+.section--light {
+    background: var(--brand-white);
+}
+
+.section--gray {
+    background: var(--bg-secondary);
+}
+
+.section--dark {
+    background: var(--brand-black);
+    color: var(--brand-white);
+}
+
+.section--gradient {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* ========================================
+   3. SECTION TITLE - Р—Р°РіРѕР»РѕРІРѕРє СЃРµРєС†РёРё
+   ======================================== */
+.section .middle_title,
+.section .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.section .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-purple), var(--brand-pink));
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* ========================================
+   4. SECTION GRID - РЎРµС‚РєР° РґР»СЏ РєР°СЂС‚РѕС‡РµРє
+   ======================================== */
+.section .grid {
+    display: grid;
+    gap: 30px;
+}
+
+.section .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.section .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================================
+   5. RESPONSIVE - РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ РґР»СЏ РІСЃРµС… СЃРµРєС†РёР№
+   ======================================== */
+
+/* Tablet - 992px */
+@media (max-width: 992px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section h1,
+    .section .middle_title {
+        font-size: 36px;
+    }
+    
+    .section .wrapper {
+        flex-direction: column;
+    }
+    
+    .section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section h1,
+    .section .middle_title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .section .container {
+        padding: 0 16px;
+    }
+    
+    .section .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+    .section h1,
+    .section .middle_title {
+        font-size: 24px;
+    }
+    
+    .section .grid {
+        gap: 20px;
+    }
+}
+
+/* ========================================
+ */

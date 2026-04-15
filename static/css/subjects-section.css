@@ -1,0 +1,215 @@
+﻿/* ========================================
+   SECTION 2 - SUBJECTS (Р”Р»СЏ РєРѕРіРѕ СЌС‚РѕС‚ РєСѓСЂСЃ)
+   Requirements: glow effects, soft shadows, brand colors
+   ======================================== */
+
+.section-2 {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+}
+
+.section-2 .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Title */
+.middle_title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2a2a29;
+    letter-spacing: -1.5px;
+}
+
+.middle_title span:first-child {
+    display: block;
+    color: #2a2a29;
+}
+
+.middle_title .highlight {
+    background: linear-gradient(135deg, #A78BFA 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+/* Cards Wrapper */
+.section-2 .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Individual Card */
+.section-2 .item {
+    background: #FFFFFF;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(167, 139, 250, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.section-2 .item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(167, 139, 250, 0.2),
+                0 0 30px rgba(236, 72, 153, 0.1);
+}
+
+/* Image Container with Glow */
+.section-2 .img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(236, 72, 153, 0.1));
+}
+
+.section-2 .img-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.section-2 .item:hover .img-glow {
+    opacity: 1;
+}
+
+.section-2 .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.section-2 .item:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Content Area */
+.section-2 .content {
+    padding: 30px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* Icon Badge */
+.icon-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(236, 72, 153, 0.15));
+    color: #A78BFA;
+    transition: all 0.3s ease;
+}
+
+.section-2 .item:hover .icon-badge {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.25), rgba(236, 72, 153, 0.25));
+    color: #EC4899;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(167, 139, 250, 0.3);
+}
+
+.icon-badge svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Text Description */
+.section-2 .content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+    color: #374151;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section-2 .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-2 {
+        padding: 60px 0;
+    }
+    
+    .middle_title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .section-2 .wrapper {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .section-2 .img-wrapper {
+        height: 220px;
+    }
+    
+    .section-2 .content {
+        padding: 24px 20px;
+    }
+    
+    .section-2 .content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-2 {
+        padding: 40px 0;
+    }
+    
+    .middle_title {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+    
+    .section-2 .img-wrapper {
+        height: 200px;
+    }
+    
+    .section-2 .content {
+        padding: 20px;
+    }
+    
+    .section-2 .content p {
+        font-size: 15px;
+    }
+    
+    .icon-badge {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .icon-badge svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+

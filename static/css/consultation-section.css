@@ -1,0 +1,198 @@
+﻿/* ========================================
+SECTION 10 - CONSULTATION (РљРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏ)
+======================================== */
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-section);
+    margin: 0;
+}
+
+.section-10 {
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-10 .wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .section-10 .wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+}
+
+.section-10 .info-column {
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .section-10 .info-column {
+        text-align: left;
+    }
+}
+
+.section-10 .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: var(--brand-white);
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    border-radius: 50px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.section-10 .tag:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* ===== Р“Р›РђР’РќРћР• РРЎРџР РђР’Р›Р•РќРР• - РќРђР§РђР›Рћ ===== */
+.section-10 .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-10 .title h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+.section-10 .title svg {
+    display: block;
+    max-width: 236px;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 991.98px) {
+    .section-10 .title {
+        align-items: center;
+    }
+}
+/* ===== Р“Р›РђР’РќРћР• РРЎРџР РђР’Р›Р•РќРР• - РљРћРќР•Р¦ ===== */
+
+.section-10 .info-column > p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+.section-10 .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .section-10 .buttons-container {
+        justify-content: flex-start;
+    }
+}
+
+.section-10 .mc_button {
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.section-10 .mc_button.consult {
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+    color: var(--brand-white);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.section-10 .mc_button.consult:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+}
+
+.section-10 .mc_button.whatsapp {
+    background: var(--brand-white);
+    color: var(--text-primary);
+    border-color: #e0e0e0;
+}
+
+.section-10 .mc_button.whatsapp:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-purple);
+}
+
+.section-10 .media-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.section-10 .main-photo {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: block; 
+}
+
+@media (max-width: 991.98px) {
+    .section-10 .main-photo {
+        display: none;
+    }
+}
+
+.section-10 .gift-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    max-width: 380px;
+    width: 100%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.section-10 .gift-box p {
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+.section-10 .gift-box p span {
+    color: var(--brand-purple);
+    font-weight: 600;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
